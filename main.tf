@@ -31,7 +31,8 @@ resource "google_compute_instance" "default" {
   }
 
   metadata {
-    foo = "bar"
+    "block-project-ssh-keys" = "true"
+    "sshKeys" = "${var.gce_ssh_user}:${file("${var.gce_ssh_public_key_path}")}"
   }
 
   service_account {

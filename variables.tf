@@ -10,3 +10,5 @@ variable "gce_scheduling" {
   type = "map"
   default = {}
 }
+variable "gce_ssh_user" {}
+variable "gce_ssh_public_key_path" {}

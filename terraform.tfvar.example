@@ -13,3 +13,5 @@ gce_scheduling = {
   on_host_maintenance = "TERMINATE"
   automatic_restart = false
 }
+gce_ssh_user = "YOUR_SSH_USER"
+gce_ssh_public_key_path = YOUR_SSH_PUBLIC_KEY_PATH"
