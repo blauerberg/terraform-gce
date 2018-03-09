@@ -1,4 +1,4 @@
-gcp_credentials = "~/123456.json"
-gcp_project = "your-project"
+gcp_credentials = "YOUR_CREDENTIAL_PATH"
+gcp_project = "YOUR_PROJECT"
 gcp_region = "asia-northeast1"
 gcp_zone = "asia-northeast1-c"
