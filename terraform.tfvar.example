@@ -1,0 +1,4 @@
+gcp_credentials = "~/123456.json"
+gcp_project = "your-project"
+gcp_region = "asia-northeast1"
+gcp_zone = "asia-northeast1-c"
