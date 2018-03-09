@@ -34,8 +34,6 @@ resource "google_compute_instance" "default" {
     foo = "bar"
   }
 
-  metadata_startup_script = "echo hi > /test.txt"
-
   service_account {
     scopes = ["userinfo-email", "compute-ro", "storage-ro"]
   }
@@ -44,9 +42,5 @@ resource "google_compute_instance" "default" {
     preemptible = true
     on_host_maintenance = "TERMINATE"
     automatic_restart = false
-  }
-
-  provisioner "local-exec" {
-    command = "echo ${google_compute_instance.default.network_interface.0.access_config.0.assigned_nat_ip} > external_ip.txt"
   }
 }
