@@ -2,3 +2,14 @@ gcp_credentials = "YOUR_CREDENTIAL_PATH"
 gcp_project = "YOUR_PROJECT"
 gcp_region = "asia-northeast1"
 gcp_zone = "asia-northeast1-c"
+gcp_region = "asia-northeast1"
+gcp_zone = "asia-northeast1-c"
+gce_name = "default"
+gce_machine_type = "n1-standard-8"
+gce_boot_disk_image = "ubuntu-os-cloud/ubuntu-1604-lts"
+gce_boot_disk_size = 20
+gce_scheduling = {
+  preemptible = true
+  on_host_maintenance = "TERMINATE"
+  automatic_restart = false
+}

@@ -5,16 +5,16 @@ provider "google" {
 }
 
 resource "google_compute_instance" "default" {
-  name         = "default"
-  machine_type = "n1-standard-8"
+  name         = "${var.gce_name}"
+  machine_type = "${var.gce_machine_type}"
   zone         = "${var.gcp_zone}"
 
   tags = ["project", "test"]
 
   boot_disk {
     initialize_params {
-      size = 20
-      image = "centos-cloud/centos-7"
+      size = "${var.gce_boot_disk_size}"
+      image = "${var.gce_boot_disk_image}"
     }
   }
 
@@ -39,8 +39,8 @@ resource "google_compute_instance" "default" {
   }
 
   scheduling {
-    preemptible = true
-    on_host_maintenance = "TERMINATE"
-    automatic_restart = false
+    preemptible = "${lookup(var.gce_scheduling, "preemptible")}"
+    on_host_maintenance = "${lookup(var.gce_scheduling, "on_host_maintenance")}"
+    automatic_restart = "${lookup(var.gce_scheduling, "automatic_restart")}"
   }
 }
