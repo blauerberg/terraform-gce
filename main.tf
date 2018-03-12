@@ -9,7 +9,7 @@ resource "google_compute_instance" "default" {
   machine_type = "${var.gce_machine_type}"
   zone         = "${var.gcp_zone}"
 
-  tags = ["project", "test"]
+  tags = ["project", "test", "http-server", "https-server"]
 
   boot_disk {
     initialize_params {
